@@ -15,16 +15,75 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>React App</title>
+    <div class="navbar-main bg-dark">
+      <!-- Ingreso / Telefono / Contacto / Redes -->
+      <section>
+          <div class="container pt-2 d-none d-lg-block">
+              <div class="row">
+                  <div class="col-12 col-sm-12 col-md-4 datos-barra text-sm-left">
+                      <p><i class="fal fa-user mr-1"></i> Bienvenido: <span id="spanUsuario"> <span> <a href="#" role="button" onclick="app.abrirLogin();">Ingrese</a> o <a href="/registro.html">Registrese</a></span></span> <a id="btnCerrarSesion" href="#" onclick="app.cerrarSesion();" style="display: none;"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></a></p>           
+                  </div>
+                  <div class="col-12 col-sm-6 col-md-4 datos-barra text-center">
+                      <h4><span id="lblNumeroTelefono"><i class="fa fa-phone-alt mr-1 d-none"></i><i class="fal fa-phone-alt mr-1"></i>4489-5790 / 6062-7572</span></h4>
+                  </div>
+                  <div id="redes_sociales" class="col-12 col-sm-6 col-md-4 header-social-networks text-center text-sm-right">
+                      <a href="/contacto.html" class="btn btn-outline-dark btn-tienda px-4 mr-3" role="button" aria-pressed="true" id="btnContactoGlobal">VENDER MI AUTO</a>
+                      
+                  <a target="_blank" href="https://www.facebook.com/geencars/" class="facebook"><i class="fab fa-facebook mr-1"></i></a><a target="_blank" href="https://www.instagram.com/carcashargentina/" class="instagram"><i class="fab fa-instagram mr-1"></i></a><a target="_blank" href="https://wa.me/5491121562746" class="whatsapp"><i class="fab fa-whatsapp mr-1"></i></a><a target="_blank" href="https://www.youtube.com/channel/UCIjlqLnsNWi26DphZd5orSg/featured" class="youtube"><i class="fab fa-youtube mr-1"></i></a><a target="_blank" href="mailto:ventas1@car-cash.com.ar" class="mail"><i class="fal fa-envelope"></i></a></div>
+              </div>
+          </div>
+         
+      </section>
+      <hr class="my-1 d-none d-lg-block ">
+  
+      <section>
+          <div class="container d-none d-lg-block bg-dark">
+              <div class="row py-2 d-flex align-items-center">
+                  <!-- Logo -->
+                  <div class="col-sm-3 d-block" id="col_izquierda">
+                      <a id="aLogo" class="navbar-brand" href="index.html">
+                          <img id="imgLogo" src="/GeenCars.jpeg" width="202" alt="" >
+                         
+                      </a>
+                  </div>
+                  <!-- Buscador -->
+                  <div class="col-sm-6">
+                      <div class="input-group">
+                          <input id="buscador" type="text" class="form-control" placeholder="Buscar">
+                          <div class="input-group-append">
+                              <button class="btn btn-outline-danger" type="button" onclick="search($('#buscador')[0]);">
+                                  <i class="far fa-search "></i>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Carrito -->
+                  <div class="col-sm-3 text-center text-sm-right" id="col_derecha">
+                      <div id="miCarrito" class="d-none">
+                          <a class="btn-mi-carrito" href="/carrito.html"> MI CARRITO 
+                              <i class="fa fa-shopping-basket fa-2x pl-1 d-none"></i><i class="fal fa-shopping-basket fa-2x pl-1 d-none"></i><i class="fal fa-shopping-bag fa-2x pl-1"></i><i class="fal fa-shopping-cart fa-2x pl-1 d-none"></i>
+                              <span class="numeritos bg-danger">0</span>
+                          </a>
+                          <p> <span class="cantidad-carrito">No tiene artículos en su carrito.</span><span class="precio-carrito">$0,00</span></p>
+                      </div>
+                  </div>
+                  <div id="div_aux" style="display:none;"></div>
+                  
+              </div>
+          </div>
+      </section>
+      <hr class="my-1 d-none d-lg-block"/>
+  
+     
+  </div>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +98,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
   </body>
 </html>
