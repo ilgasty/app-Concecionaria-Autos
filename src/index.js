@@ -4,7 +4,7 @@ import './index.css';
 //import { Autos } from './Autos';
 import reportWebVitals from './reportWebVitals';
 import { MainApp } from './components/autopage/MainApp';
-
+import './styles/style.scss';
 ReactDOM.render(
   <React.StrictMode>
   <MainApp/>

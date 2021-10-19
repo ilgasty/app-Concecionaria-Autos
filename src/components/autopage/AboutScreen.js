@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
-import { UserContext } from './UserContext'
+import { authContext } from '../../auth/authContext'
+
 
 export const AboutScreen = () => {
-  const {user}=useContext(UserContext)
+  const {user}=useContext(authContext)
 
   return (
     <div>
-      <per>
+      <pre>
         {JSON.stringify(user,null,3)}
-      </per>
+      </pre>
     </div>
   )
 }
