@@ -18,6 +18,15 @@ export const register=(uid,displayName,password)=>({
     }
 })
 
+export const startRegisterWithEmailPasswordName =(email, password,name)=>{
+    return (dispatch)=>{
+        firebase.auth().createUserWithEmailAndPassword(email,password)
+        .then(({user})=>{
+            console.log(user);
+        })
+    }
+}
+
 export const startGooglelogin=()=>{
     return (dispatch)=>{
         firebase.auth().signInWithPopup(googleAuthProvide)
